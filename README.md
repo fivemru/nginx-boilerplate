@@ -33,9 +33,21 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/self
 
 ### Step 3
 
-Copy all files from this repo to `/etc/nginx/*`.
+Copy all files from this repo to `/etc/nginx/*`:
 
-Set up `/etc/nginx/sites-enabled/site.com.conf`
+```
+cd /etc/nginx/
+sudo git clone https://github.com/fivemru/nginx-boilerplate.git
+sudo cp -r ./nginx-boilerplate/* ./
+sudo rm -fr nginx-boilerplate/ sites-enabled/default
+```
+
+Set up user in `nginx.conf` (www-data or nginx).
+
+Set up `./letsencrypt.conf`
+
+Set up `./sites-enabled/site.com.conf`
+
 
 ### Step 4 (optional)
 
